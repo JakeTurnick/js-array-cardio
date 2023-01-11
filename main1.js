@@ -47,9 +47,7 @@
       function firstLast(invArr) {
         console.log('\nFirst Last names')
         let names = [];
-        invArr.forEach(inv => {
-            names.push([inv.first, inv.last])
-        })
+        names = invArr.map(names => [names.first, names.last])
         console.log(names);
         return names;
       }
@@ -68,6 +66,7 @@
   
       // Array.prototype.reduce()
       // 4. How many years did all the inventors live all together?
+
   
       // 5. Sort the inventors by years lived
   
