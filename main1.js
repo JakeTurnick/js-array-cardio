@@ -104,13 +104,28 @@
       // Sort the people alphabetically by last name
       function byLast(ppl) {
         console.log('\nBy last name')
+        let splitNames = [];
     
-        let names = ppl.slice(', ');
-        console.log(names)
+        let names = ppl.slice();
+        names.forEach(name => {
+            splitNames.push(name.split(', '));
+        })
+        splitNames.sort();
+
+        console.log(splitNames)
       }
       byLast(people);
   
       // 8. Reduce Exercise
       // Sum up the instances of each of these
       const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
-  
+      function instances(arr) {
+        console.log('\nSum instances of items')
+
+        const amount = arr.reduce((allItems, item) => {
+            const currCount = allItems[item] ?? 0;
+            return { ...allItems, [item]: currCount + 1}
+        },{});
+        console.log(amount)
+      }
+      instances(data);
